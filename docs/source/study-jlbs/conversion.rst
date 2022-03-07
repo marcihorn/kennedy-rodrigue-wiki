@@ -1,5 +1,9 @@
+=================================================
 Study: Joint Longitudinal Behavioral Study (JLBS)
 =================================================
+
+Conversion
+**********
 
 .. _download:
 
@@ -60,8 +64,8 @@ Convert
 
 .. _qc:
 
-QC
---
+QC Parameters
+-------------
 
 6. Convert the bids json files to csv
 
