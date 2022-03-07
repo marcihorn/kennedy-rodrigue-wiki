@@ -8,4 +8,4 @@ Welcome to Kennedy-Rodrigue Lab documentation!
 .. toctree::
    :maxdepth: 3
 
-   study-jlbs
+   study-jlbs/conversion
