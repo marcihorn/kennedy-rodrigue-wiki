@@ -6,13 +6,13 @@ Study: Joint Longitudinal Behavioral Study (JLBS)
 Download
 --------
 
-1. Download the appropriate files from UT Southwestern's AIRC website (`https://swlxaircweb.swmed.edu/ <https://swlxaircweb.swmed.edu/>`_) to `/raid/data/shared/incoming`
+1. Download the appropriate files from UT Southwestern's AIRC website (`https://swlxaircweb.swmed.edu/ <https://swlxaircweb.swmed.edu/>`_) to ``/raid/data/shared/incoming``
    
    Make the zip file name completely lowercase and should match one of the following. 
-   <airc_id>_<sub>_w<1|2|3>/`
+   ``<airc_id>_<sub>_w<1|2|3>/``
    
    However, it be the following if there is no study ID such as pilot or test participants, it can be:
-   `<airc_id>/` or `<airc_id>_w<1|2|3>/`
+   ``<airc_id>/`` or ``<airc_id>_w<1|2|3>/``
 
 
 .. _convert:
