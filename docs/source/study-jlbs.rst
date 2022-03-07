@@ -1,6 +1,8 @@
 Study: Joint Longitudinal Behavioral Study (JLBS)
 =====
 
+.. _download:
+
 Download
 ------------
 
@@ -10,11 +12,14 @@ Download
     However, it be the following if there is no study ID such as pilot or test participants, it can be:
     `<airc_id>/` or `<airc_id>_w<1|2|3>/`
 
+
+.. _convert:
+
 Convert
 ------------
 
 2. Load appropriate modules and set parameters for subsequent code
-.. code-block:: 
+.. code-block:: console
    :linenos:
    module load sge
    module load python/3.8.6
@@ -25,7 +30,7 @@ Convert
    ses=""
 
 3. Unzip files to dcm and rename to lowercase
-.. code-block::
+.. code-block:: console
    :linenos:
    code_dir="${root_dir}/shared/software/scripts/eep170030/mri/convert"
    qsub -V ${code_dir}/unzip_rename.sh \
@@ -34,19 +39,24 @@ Convert
    --ses ${ses}
 
 4. Sort DICOM files into appropriate directories by series name
-.. code-block::
+.. code-block:: console
    :linenos:
    qsub -V ${code_dir}/sort_save_dcm.sh ${airc_id} ${sub} ${ses}
 
 5. Convert files from dicom (.dcm) to nifti (.nii)
-.. code-block::
+.. code-block:: console
    code_dir="${root_dir}/shared/software/scripts/eep170030/mri/convert"
    qsub ${code_dir}/dcm2nii_wrapper.sh \
    --airc_id ${airc_id} \
    --sub ${sub} \
    --ses ${ses}
 
+.. _qc:
+
+# QC
+
 6. Convert the bids json files to csv
-.. code-block::
-   python ${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/json/json_to_csv.py
-   Rscript ${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/json/combine_csv.R
+.. code-block:: console
+   code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/json"
+   python ${code_dir}/json_to_csv.py
+   Rscript ${code_dir}/combine_csv.R
