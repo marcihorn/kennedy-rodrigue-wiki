@@ -11,6 +11,9 @@ Download
     However, it be the following if there is no study ID such as pilot or test participants, it can be:
     `<airc_id>/` or `<airc_id>_w<1|2|3>/`
 
+Convert
+------------
+
 2. Load appropriate modules and set parameters for subsequent code
 .. code-block:: 
    :linenos:
@@ -18,9 +21,9 @@ Download
    module load python/3.8.6
    #pip install --user git+https://github.com/epongpipat/pyHelperKennedyRodrigue.git
    root_dir='/raid/data'
-   airc_id="3tb8375"
-   sub="1188"
-   ses="3"
+   airc_id=""
+   sub=""
+   ses=""
 
 3. Unzip files to dcm and rename to lowercase
 .. code-block::
