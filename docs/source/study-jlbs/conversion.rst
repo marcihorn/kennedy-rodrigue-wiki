@@ -18,9 +18,9 @@ Download
    module load python/3.8.6
    #pip install --user git+https://github.com/epongpipat/pyHelperKennedyRodrigue.git
    root_dir='/raid/data'
-   airc_id="3tb8375"
-   sub="1188"
-   ses="3"
+   airc_id=""
+   sub=""
+   ses=""
 
 3. Unzip files to dcm and rename to lowercase
 .. code-block::
