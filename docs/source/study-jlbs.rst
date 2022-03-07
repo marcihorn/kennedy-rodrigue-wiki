@@ -1,4 +1,4 @@
-study-jlbs
+Study: Joint Longitudinal Behavioral Study (JLBS)
 
 =====
 
