@@ -14,10 +14,10 @@ Download
 
 1. Download the appropriate files from UT Southwestern's AIRC website (`https://swlxaircweb.swmed.edu/ <https://swlxaircweb.swmed.edu/>`_) to ``/raid/data/shared/incoming``
    
-   Make the zip file name completely lowercase and should match one of the following. 
+   Make the zip file name completely lowercase and should match the following:
    ``<airc_id>_<sub>_w<1|2|3>/``
    
-   However, it be the following if there is no study ID such as pilot or test participants, it can be:
+   However, if there is no study ID such as the participant being a pilot, it can be:
    ``<airc_id>/`` or ``<airc_id>_w<1|2|3>/``
 
 
@@ -26,13 +26,22 @@ Download
 Convert
 -------
 
+.. note::
+
+   Install the following package if you have not run this before:
+
+   .. code:: bash
+
+      module load python/3.8.6
+      pip install --user git+https://github.com/epongpipat/pyHelperKennedyRodrigue.git
+
+
 2. Load appropriate modules and set parameters for subsequent code
 
 .. code:: bash
 
    module load sge
    module load python/3.8.6
-   #pip install --user git+https://github.com/epongpipat/pyHelperKennedyRodrigue.git
    root_dir='/raid/data'
    airc_id=""
    sub=""
