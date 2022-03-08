@@ -52,7 +52,10 @@ Convert
 
 .. code:: bash
 
-   qsub -V ${code_dir}/sort_save_dcm.sh ${airc_id} ${sub} ${ses}
+   qsub -V ${code_dir}/sort_save_dcm.sh \
+   --airc_id ${airc_id} \
+   --sub ${sub} \
+   --ses ${ses}
 
 5. Convert files from dicom (.dcm) to nifti (.nii)
 
@@ -74,5 +77,10 @@ QC Parameters
 .. code:: bash
 
    code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/json"
-   python ${code_dir}/json_to_csv.py
+   python ${code_dir}/json_to_csv.py \
+   --airc_id ${airc_id} \
+   --sub ${sub}
+
+.. code:: bash
+
    Rscript ${code_dir}/combine_csv.R
