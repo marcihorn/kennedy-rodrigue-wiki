@@ -103,6 +103,18 @@ Copy Files
 
 7. Copy and rename files
 
+.. note:: 
+
+   may need to install the following if running for the first time:
+
+   .. code:: bash
+
+      Rscript -e 'devtools::install_github("epongpipat/rHelperKennedyRodrigue")'
+
+.. code:: bash
+
+   module load fsl
+
 Create an ``original/`` directory and move files inside the original directory
 
 .. code:: bash
@@ -113,7 +125,7 @@ Create an ``original/`` directory and move files inside the original directory
 rename files to match prior waves
 
 .. code:: bash
-
+   
    code_dir="${root_dir}/shared/software/scripts/eep170030/mri/modality_specific_conversion"
    Rscript ${code_dir}/rename_all_mri_types.R \
    --airc_id ${airc_id} \
