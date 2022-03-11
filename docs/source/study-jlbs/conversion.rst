@@ -115,6 +115,6 @@ rename files to match prior waves
 .. code:: bash
 
    code_dir="${root_dir}/shared/software/scripts/eep170030/mri/modality_specific_conversion"
-      Rscript ${code_dir}/rename_all_mri_types.R \
-      --airc_id ${airc_id} \
-      --sub ${sub}
+   Rscript ${code_dir}/rename_all_mri_types.R \
+   --airc_id ${airc_id} \
+   --sub ${sub}
