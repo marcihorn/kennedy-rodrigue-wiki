@@ -76,6 +76,8 @@ Convert
    --sub ${sub} \
    --ses ${ses}
 
+check conversion and move bad files (e.g., incomplete acquisitions) into a ``bad/`` directory
+
 .. _qc:
 
 QC Parameters
