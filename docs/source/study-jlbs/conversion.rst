@@ -93,3 +93,28 @@ QC Parameters
 .. code:: bash
 
    Rscript ${code_dir}/combine_csv.R
+
+.. code:: bash
+
+.. _copy:
+
+Copy Files
+----------
+
+7. Copy and rename files
+
+Create an ``original/`` directory and move files inside the original directory
+
+.. code:: bash
+
+   mkdir ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/original/
+   mv ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/* ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/original/
+
+rename files to match prior waves
+
+.. code:: bash
+
+   code_dir="${root_dir}/shared/software/scripts/eep170030/mri/modality_specific_conversion"
+      Rscript ${code_dir}/rename_all_mri_types.R \
+      --airc_id ${airc_id} \
+      --sub ${sub}
