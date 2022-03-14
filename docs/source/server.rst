@@ -2,6 +2,24 @@
 Server
 ######
 
+.. _map_network_drive:
+
+Map Network Drive
+-----------------
+
+For Mac users, go to ``Finder`` > ``Go`` > ``Connect to Server``, enter the following and press ``Connect``:
+
+.. code::
+
+    smb://cvlkrfs/shared
+
+
+For Windows users, follow the instructions `here <https://atlas.utdallas.edu/TDClient/30/Portal/KB/ArticleDet?ID=51>`_ and use the following for server:
+
+.. code::
+
+    \\cvlkrfs\shared
+
 .. _login:
 
 Login
