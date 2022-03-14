@@ -14,7 +14,7 @@ For Mac users, go to ``Finder`` > ``Go`` > ``Connect to Server``, enter the foll
     smb://cvlkrfs/shared
 
 
-For Windows users, follow the instructions `here <https://atlas.utdallas.edu/TDClient/30/Portal/KB/ArticleDet?ID=51>`_ and use the following for server:
+For Windows users, follow the instructions `here <https://atlas.utdallas.edu/TDClient/30/Portal/KB/ArticleDet?ID=51>`_ and use the following for ``Folder`` field:
 
 .. code::
 
