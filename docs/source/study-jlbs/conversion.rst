@@ -100,7 +100,7 @@ QC Parameters
 
 .. note::
 
-   The following code needs to be run locally, the server does not currently have a compatible pandoc version
+   The following code needs to be run locally. The server does not currently have a compatible pandoc version
 
 .. code:: bash
 
