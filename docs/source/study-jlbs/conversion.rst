@@ -111,7 +111,7 @@ QC Parameters
 Copy Files
 ----------
 
-7. Copy and rename files
+8. Copy and rename files
 
 .. note:: 
 
