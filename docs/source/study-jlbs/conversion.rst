@@ -98,7 +98,7 @@ QC Parameters
 
 7. Create QC report
 
-   .. note::
+.. note::
 
    The following code needs to be run locally, the server does not currently have a compatible pandoc version
 
