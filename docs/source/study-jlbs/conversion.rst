@@ -96,7 +96,15 @@ QC Parameters
 
    Rscript ${code_dir}/combine_csv.R
 
+7. Create QC report
+
+   .. note::
+
+   The following code needs to be run locally, the server does not currently have a compatible pandoc version
+
 .. code:: bash
+
+   Rscript ${code_dir}/render_qc_html.R
 
 .. _copy:
 
