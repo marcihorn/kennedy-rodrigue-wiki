@@ -96,7 +96,29 @@ QC Parameters
 
    Rscript ${code_dir}/combine_csv.R
 
-7. Create QC report
+
+7. Convert fslhd to csv
+   
+   .. code:: bash
+
+      code_dir="${root_dir}/shared/software/scripts/Janes_scripts"
+      bash ${code_dir}/fslhd2csv.sh \
+      --airc_id ${airc_id} \
+      --sub ${sub}
+
+   .. code:: bash
+
+      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/fslhd"
+      Rscript ${code_dir}/combine_csv.R
+
+8. Combine all information
+
+   .. code:: bash
+
+      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri"
+      Rscript ${code_dir}/combine_all.R
+
+9.  Create QC report
 
 .. note::
 
@@ -104,14 +126,19 @@ QC Parameters
 
 .. code:: bash
 
-   Rscript ${code_dir}/render_qc_html.R
+   code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/rmd"
+   Rscript ${code_dir}/render-rmds.R
+
+   Six (6) QC html reports will be updated/saved in `${root_dir}/shared/incoming/qc/derivatives/sub-differences/rmd-html`
+
+   Please review and any potential outliers in either qualitative or quantitive values, and bring up any potential concerns to the team.
 
 .. _copy:
 
 Copy Files
 ----------
 
-8. Copy and rename files
+10. Copy and rename files
 
 .. note:: 
 
