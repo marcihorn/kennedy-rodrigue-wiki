@@ -10,3 +10,4 @@ Welcome to Kennedy-Rodrigue Lab documentation!
 
    server
    study-jlbs/conversion
+   study-jlbs/preprocessing
