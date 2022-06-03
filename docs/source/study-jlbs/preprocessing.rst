@@ -1,9 +1,16 @@
+#################################################
+Study: Joint Longitudinal Behavioral Study (JLBS)
+#################################################
+
 .. _preprocessing:
 
 Preprocessing
 ==========
 
 .. _T1w:
+
+T1w
+---
 
 0. Setup
 
