@@ -9,4 +9,4 @@ Welcome to Kennedy-Rodrigue Lab documentation!
    :maxdepth: 3
 
    server
-   study-jlbs/overview
+   study-jlbs/index

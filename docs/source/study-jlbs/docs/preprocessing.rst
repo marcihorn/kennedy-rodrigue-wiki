@@ -1,6 +1,5 @@
-.. _preproc:
+.. _preprocessing:
 
-=============
 Preprocessing
 =============
 
@@ -30,6 +29,7 @@ T1w
    * ``aparc.a2009s+aseg.mgz``
    * ``wmparc.mgz``
 
+
 #. Warp freesurfer volumetric ROIs from freesurfer-space to native T1w space
 
    .. code:: bash
@@ -46,6 +46,6 @@ T1w
    The code performs the following:
    
    * brain extraction (using ANTs, FSL, and Freesurfer)
-   * combines brain mask
+   * combines brain masks
    * warps the brain to MNI152 space
    * creates tissue segments (FSL's fast)

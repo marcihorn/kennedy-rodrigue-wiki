@@ -1,8 +1,7 @@
 .. _conversion:
 
-##########
 Conversion
-##########
+==========
 
 .. _download:
 
