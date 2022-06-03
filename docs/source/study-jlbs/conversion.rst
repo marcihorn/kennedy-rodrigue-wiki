@@ -38,45 +38,46 @@ Convert
 
 2. Load appropriate modules and set parameters for subsequent code
 
-.. code:: bash
+   .. code:: bash
 
-   module load sge
-   module load python/3.8.6
-   root_dir='/raid/data'
-   airc_id=""
-   sub=""
-   ses=""
+      module load sge
+      module load python/3.8.6
+      root_dir='/raid/data'
+      airc_id=""
+      sub=""
+      ses=""
 
 3. Unzip files to dcm and rename to lowercase
 
-.. code:: bash
+   .. code:: bash
 
-   code_dir="${root_dir}/shared/software/scripts/eep170030/mri/convert"
-   qsub -V ${code_dir}/unzip_rename.sh \
-   --airc_id ${airc_id} \
-   --sub ${sub} \
-   --ses ${ses}
+      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/convert"
+      qsub -V ${code_dir}/unzip_rename.sh \
+      --airc_id ${airc_id} \
+      --sub ${sub} \
+      --ses ${ses}
 
 4. Sort DICOM files into appropriate directories by series name
 
-.. code:: bash
+   .. code:: bash
 
-   qsub -V ${code_dir}/sort_save_dcm.sh \
-   --airc_id ${airc_id} \
-   --sub ${sub} \
-   --ses ${ses}
+      qsub -V ${code_dir}/sort_save_dcm.sh \
+      --airc_id ${airc_id} \
+      --sub ${sub} \
+      --ses ${ses}
 
 5. Convert files from dicom (.dcm) to nifti (.nii)
 
-.. code:: bash
+   .. code:: bash
 
-   code_dir="${root_dir}/shared/software/scripts/eep170030/mri/convert"
-   qsub ${code_dir}/dcm2nii_wrapper.sh \
-   --airc_id ${airc_id} \
-   --sub ${sub} \
-   --ses ${ses}
+      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/convert"
+      qsub ${code_dir}/dcm2nii_wrapper.sh \
+      --airc_id ${airc_id} \
+      --sub ${sub} \
+      --ses ${ses}
 
-check conversion and move bad files (e.g., incomplete acquisitions) into a ``bad/`` directory
+
+   check conversion and move bad files (e.g., incomplete acquisitions) into a ``bad/`` directory
 
 .. _qc:
 
@@ -85,16 +86,16 @@ QC Parameters
 
 6. Convert the bids json files to csv
 
-.. code:: bash
+   .. code:: bash
 
-   code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/json"
-   python ${code_dir}/json_to_csv.py \
-   --airc_id ${airc_id} \
-   --sub ${sub}
+      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/json"
+      python ${code_dir}/json_to_csv.py \
+      --airc_id ${airc_id} \
+      --sub ${sub}
 
-.. code:: bash
+   .. code:: bash
 
-   Rscript ${code_dir}/combine_csv.R
+      Rscript ${code_dir}/combine_csv.R
 
 
 7. Convert fslhd to csv
@@ -120,18 +121,17 @@ QC Parameters
 
 9.  Create QC report
 
-.. note::
+   .. note::
 
-   The following code needs to be run locally. The server does not currently have a compatible pandoc version
+      The following code needs to be run locally. The server does not currently have a compatible pandoc version
 
-.. code:: bash
+   .. code:: bash
 
-   code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/rmd"
-   Rscript ${code_dir}/render-rmds.R
+      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/rmd"
+      Rscript ${code_dir}/render-rmds.R
 
-   Six (6) QC html reports will be updated/saved in `${root_dir}/shared/incoming/qc/derivatives/sub-differences/rmd-html`
 
-   Please review and any potential outliers in either qualitative or quantitive values, and bring up any potential concerns to the team.
+   Six (6) QC html reports will be updated/saved in `${root_dir}/shared/incoming/qc/derivatives/sub-differences/rmd-html`. Please review and any potential outliers in either qualitative or quantitive values, and bring up any potential concerns to the team.
 
 .. _copy:
 
@@ -140,30 +140,31 @@ Copy Files
 
 10. Copy and rename files
 
-.. note:: 
+   .. note:: 
 
-   may need to install the following if running for the first time:
+      may need to install the following if running for the first time:
+
+      .. code:: bash
+
+         Rscript -e 'devtools::install_github("epongpipat/rHelperKennedyRodrigue")'
 
    .. code:: bash
 
-      Rscript -e 'devtools::install_github("epongpipat/rHelperKennedyRodrigue")'
+      module load fsl
 
-.. code:: bash
-
-   module load fsl
-
-Create an ``original/`` directory and move files inside the original directory
-
-.. code:: bash
-
-   mkdir ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/original/
-   mv ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/* ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/original/
-
-rename files to match prior waves
-
-.. code:: bash
    
-   code_dir="${root_dir}/shared/software/scripts/eep170030/mri/modality_specific_conversion"
-   Rscript ${code_dir}/rename_all_mri_types.R \
-   --airc_id ${airc_id} \
-   --sub ${sub}
+   Create an ``original/`` directory and move files inside the original directory
+
+   .. code:: bash
+
+      mkdir ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/original/
+      mv ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/* ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/original/
+
+   rename files to match prior waves
+
+   .. code:: bash
+      
+      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/modality_specific_conversion"
+      Rscript ${code_dir}/rename_all_mri_types.R \
+      --airc_id ${airc_id} \
+      --sub ${sub}
