@@ -9,5 +9,4 @@ Welcome to Kennedy-Rodrigue Lab documentation!
    :maxdepth: 3
 
    server
-   study-jlbs/conversion
-   study-jlbs/preprocessing
+   study-jlbs/overview

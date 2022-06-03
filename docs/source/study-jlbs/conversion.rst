@@ -1,11 +1,8 @@
-#################################################
-Study: Joint Longitudinal Behavioral Study (JLBS)
-#################################################
-
 .. _conversion:
 
+##########
 Conversion
-==========
+##########
 
 .. _download:
 
