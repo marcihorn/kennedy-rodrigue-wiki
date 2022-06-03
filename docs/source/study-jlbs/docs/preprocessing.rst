@@ -30,7 +30,7 @@ T1w
    * ``wmparc.mgz``
 
 
-#. Warp freesurfer volumetric ROIs from freesurfer-space to native T1w space
+#. Warp volumetric ROIs from freesurfer-space to native T1w space
 
    .. code:: bash
 

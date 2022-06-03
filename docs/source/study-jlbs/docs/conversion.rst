@@ -8,7 +8,7 @@ Conversion
 Download
 --------
 
-1. Download the appropriate files from UT Southwestern's AIRC website (`https://swlxaircweb.swmed.edu/ <https://swlxaircweb.swmed.edu/>`_) to ``/raid/data/shared/incoming``
+#. Download the appropriate files from UT Southwestern's AIRC website (`https://swlxaircweb.swmed.edu/ <https://swlxaircweb.swmed.edu/>`_) to ``/raid/data/shared/incoming``
    
    Make the zip file name completely lowercase and should match the following:
    ``<airc_id>_<sub>_w<1|2|3>/``
@@ -32,7 +32,7 @@ Convert
       pip install --user git+https://github.com/epongpipat/pyHelperKennedyRodrigue.git
 
 
-2. Load appropriate modules and set parameters for subsequent code
+#. Load appropriate modules and set parameters for subsequent code
 
    .. code:: bash
 
@@ -43,7 +43,7 @@ Convert
       sub=""
       ses=""
 
-3. Unzip files to dcm and rename to lowercase
+#. Unzip files to dcm and rename to lowercase
 
    .. code:: bash
 
@@ -53,7 +53,7 @@ Convert
       --sub ${sub} \
       --ses ${ses}
 
-4. Sort DICOM files into appropriate directories by series name
+#. Sort DICOM files into appropriate directories by series name
 
    .. code:: bash
 
@@ -62,7 +62,7 @@ Convert
       --sub ${sub} \
       --ses ${ses}
 
-5. Convert files from dicom (.dcm) to nifti (.nii)
+#. Convert files from dicom (.dcm) to nifti (.nii)
 
    .. code:: bash
 
@@ -80,7 +80,7 @@ Convert
 QC Parameters
 -------------
 
-6. Convert the bids json files to csv
+#. Convert the bids json files to csv
 
    .. code:: bash
 
@@ -94,7 +94,7 @@ QC Parameters
       Rscript ${code_dir}/combine_csv.R
 
 
-7. Convert fslhd to csv
+#. Convert fslhd to csv
    
    .. code:: bash
 
@@ -108,14 +108,14 @@ QC Parameters
       code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/fslhd"
       Rscript ${code_dir}/combine_csv.R
 
-8. Combine all information
+#. Combine all information
 
    .. code:: bash
 
       code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri"
       Rscript ${code_dir}/combine_all.R
 
-9.  Create QC report
+#.  Create QC report
 
    .. note::
 
@@ -127,14 +127,14 @@ QC Parameters
       Rscript ${code_dir}/render-rmds.R
 
 
-   Six (6) QC html reports will be updated/saved in `${root_dir}/shared/incoming/qc/derivatives/sub-differences/rmd-html`. Please review and any potential outliers in either qualitative or quantitive values, and bring up any potential concerns to the team.
+   Six (6) QC html reports will be updated/saved in ``${root_dir}/shared/incoming/qc/derivatives/sub-differences/rmd-html``. Please review and any potential outliers in either qualitative or quantitive values, and bring up any potential concerns to the team.
 
 .. _copy:
 
 Copy Files
 ----------
 
-10. Copy and rename files
+#. Copy and rename files
 
    .. note:: 
 
