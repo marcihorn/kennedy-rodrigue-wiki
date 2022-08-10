@@ -48,7 +48,7 @@ Convert
    .. code:: bash
 
       code_dir="${root_dir}/shared/software/scripts/eep170030/mri/convert"
-      qsub -V ${code_dir}/convert_uber.sh \
+      bash ${code_dir}/convert_uber.sh \
       --airc_id ${airc_id} \
       --sub ${sub} \
       --ses ${ses}
