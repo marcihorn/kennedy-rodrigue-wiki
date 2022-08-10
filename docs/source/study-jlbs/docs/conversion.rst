@@ -53,7 +53,8 @@ Convert
       --sub ${sub} \
       --ses ${ses}
 
-   this code will:
+   The code performs the following:
+   
    1. unzip files and rename the output directory to lowercase
    2. sort the DICOM files into their appropriate directories by series name
    3. convert files from DICOM to NIfTI using dcm2niix
