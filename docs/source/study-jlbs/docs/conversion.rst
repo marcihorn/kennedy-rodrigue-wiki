@@ -43,35 +43,20 @@ Convert
       sub=""
       ses=""
 
-#. Unzip files to dcm and rename to lowercase
+#. Convert MRI
 
    .. code:: bash
 
       code_dir="${root_dir}/shared/software/scripts/eep170030/mri/convert"
-      qsub -V ${code_dir}/unzip_rename.sh \
+      qsub -V ${code_dir}/convert_uber.sh \
       --airc_id ${airc_id} \
       --sub ${sub} \
       --ses ${ses}
 
-#. Sort DICOM files into appropriate directories by series name
-
-   .. code:: bash
-
-      qsub -V ${code_dir}/sort_save_dcm.sh \
-      --airc_id ${airc_id} \
-      --sub ${sub} \
-      --ses ${ses}
-
-#. Convert files from dicom (.dcm) to nifti (.nii)
-
-   .. code:: bash
-
-      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/convert"
-      qsub ${code_dir}/dcm2nii_wrapper.sh \
-      --airc_id ${airc_id} \
-      --sub ${sub} \
-      --ses ${ses}
-
+   this code will:
+   1. unzip files and rename the output directory to lowercase
+   2. sort the DICOM files into their appropriate directories by series name
+   3. convert files from DICOM to NIfTI using dcm2niix
 
    check conversion and move bad files (e.g., incomplete acquisitions) into a ``bad/`` directory
 
