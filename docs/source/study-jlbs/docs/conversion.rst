@@ -59,47 +59,29 @@ Convert
    2. sort the DICOM files into their appropriate directories by series name
    3. convert files from DICOM to NIfTI using dcm2niix
 
-   check conversion and move bad files (e.g., incomplete acquisitions) into a ``bad/`` directory
+   After the script is done, check the conversion and move bad files (e.g., incomplete acquisitions) into a ``bad/`` directory
 
 .. _qc:
 
 QC Parameters
 -------------
 
-#. Convert the bids json files to csv
-
-   .. code:: bash
-
-      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/json"
-      python ${code_dir}/json_to_csv.py \
-      --airc_id ${airc_id} \
-      --sub ${sub}
-
-   .. code:: bash
-
-      Rscript ${code_dir}/combine_csv.R
-
-
-#. Convert fslhd to csv
-   
-   .. code:: bash
-
-      code_dir="${root_dir}/shared/software/scripts/Janes_scripts"
-      bash ${code_dir}/fslhd2csv.sh \
-      --airc_id ${airc_id} \
-      --sub ${sub}
-
-   .. code:: bash
-
-      code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri/fslhd"
-      Rscript ${code_dir}/combine_csv.R
-
-#. Combine all information
+#. Create QC files
 
    .. code:: bash
 
       code_dir="${root_dir}/shared/software/scripts/eep170030/mri/qc_mri"
-      Rscript ${code_dir}/combine_all.R
+      bash ${code_dir}/qc_uber.sh \
+      --airc_id ${airc_id} \
+      --sub ${sub}
+
+   The code performs the following:
+
+   1. converts dcm2niix bids output from .json to .csv format
+   2. combines dcm2niix bids output (.csv) across participants by acquisition
+   3. converts fslhd output to .csv format
+   4. combines fslhd output (.csv) across participants by acquisition
+   5. combines all .csv output by acquisition
 
 #.  Create QC report
 
@@ -133,20 +115,12 @@ Copy Files
    .. code:: bash
 
       module load fsl
-
-   
-   Create an ``original/`` directory and move files inside the original directory
-
-   .. code:: bash
-
-      mkdir ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/original/
-      mv ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/* ${root_dir}/shared/incoming/nii/${airc_id}_${sub}/original/
-
-   rename files to match prior waves
-
-   .. code:: bash
-      
       code_dir="${root_dir}/shared/software/scripts/eep170030/mri/modality_specific_conversion"
-      Rscript ${code_dir}/rename_all_mri_types.R \
+      bash ${code_dir}/modality_specific_conversion/copy_files_uber.sh \
       --airc_id ${airc_id} \
       --sub ${sub}
+
+   The code performs the following:
+
+   1. copy files into an ``original/`` directory
+   2. rename and merge/split files volumes to match prior convention
