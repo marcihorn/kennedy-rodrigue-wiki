@@ -10,4 +10,4 @@ Contains the documentation related to JLBS
    :maxdepth: 1
 
    docs/conversion
-   docs/preprocessing
+   docs/T1w

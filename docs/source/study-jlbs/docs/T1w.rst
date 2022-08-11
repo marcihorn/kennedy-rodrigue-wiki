@@ -1,12 +1,14 @@
-.. _preprocessing:
-
-Preprocessing
-=============
-
-.. _preproc_T1w:
+.. _T1w:
 
 T1w
----
+=============
+
+.. _T1w_preproc:
+
+Preprocessing
+-------------
+
+#. Run freesurfer and manual interventions
 
 #. Setup
 
