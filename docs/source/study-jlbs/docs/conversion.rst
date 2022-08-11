@@ -114,7 +114,6 @@ Copy Files
 
    .. code:: bash
 
-      module load fsl
       code_dir="${root_dir}/shared/software/scripts/eep170030/mri/modality_specific_conversion"
       bash ${code_dir}/modality_specific_conversion/copy_files_uber.sh \
       --airc_id ${airc_id} \
