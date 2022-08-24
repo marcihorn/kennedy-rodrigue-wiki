@@ -157,3 +157,5 @@ cython_debug/
 docs/source/.DS_Store
 .DS_Store
 ._*
+.*
+!.gitignore
