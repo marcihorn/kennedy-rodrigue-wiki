@@ -8,7 +8,7 @@ Conversion
 Download
 --------
 
-#. Download the appropriate files from UT Southwestern's AIRC website (`https://swlxaircweb.swmed.edu/ <https://swlxaircweb.swmed.edu/>`_) to ``/raid/data/shared/incoming``
+#. Download the appropriate files from UT Southwestern's AIRC website (`https://swlxaircweb.swmed.edu/ <https://swlxaircweb.swmed.edu/>`_) to ``/raid/data/shared/incoming/airc/``
    
    Make the zip file name completely lowercase and should match the following:
    ``<airc_id>_<sub>_w<1|2|3>/``
