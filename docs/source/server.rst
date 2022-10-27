@@ -4,7 +4,7 @@ Server
 
 .. _map_network_drive:
 
-Map Network Drive
+Map Network Directory ("shared" drive)
 -----------------
 
 For Mac users, go to ``Finder`` > ``Go`` > ``Connect to Server``, enter the following and press ``Connect``:
@@ -22,8 +22,12 @@ For Windows users, follow the instructions `here <https://atlas.utdallas.edu/TDC
 
 .. _login:
 
-Login
+Login with Command Line
 -----
+
+For Max users, use the "Terminal" program built into Mac
+
+For Windows users, install either `Putty <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ or `MobaXterm <https://mobaxterm.mobatek.net/download-home-edition.html>`_
 
 .. code:: bash
 
