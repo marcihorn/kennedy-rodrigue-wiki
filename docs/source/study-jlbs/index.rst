@@ -11,3 +11,4 @@ Contains the documentation related to JLBS
 
    docs/conversion
    docs/T1w
+   docs/fmri
