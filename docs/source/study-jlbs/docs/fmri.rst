@@ -2,7 +2,6 @@
 fMRI Data Processing
 ######
 
-Test
 
 .. note::
    This documentation is under active development. Last updated: 4/21/2023
@@ -49,7 +48,7 @@ To convert the behavioral files to files that are usable by SPM:
     
     bash /cvl/kenrod/KK_KR_JLBS/MRI/FMRI/scripts/wrap_mk_soa_fix.sh <airc_id>
 
-This should output the ‘.soa’ files into the soa folder. This is located in /cvl/kenrod/study-jlbs/Wave3/MRI/FMRI/soa.
+This should output the ‘.soa’ files into the soa folder. This is located in ``/cvl/kenrod/study-jlbs/Wave3/MRI/FMRI/soa``.
 
 
 .. _fmri_preprocessing:
