@@ -16,6 +16,7 @@ If the subject’s fMRI behavioral files have not yet been copied to our server,
 
 1. Copy raw files to ``incoming/fmri_task/raw``. This path contains all raw behavioral files of ``every participant in this study``.
 
+
 .. code::
 
     /cvl/kenrod/incoming/fmri_task/raw
