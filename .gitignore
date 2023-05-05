@@ -159,3 +159,4 @@ docs/source/.DS_Store
 ._*
 .*
 !.gitignore
+!.readthedocs.yml
