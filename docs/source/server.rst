@@ -88,20 +88,7 @@ Basic Slurm commands:
     squeue # Show see pending jobs
     scancel <jobid> or scancel -u <username> # Cancel a job
 
-Script Template:
-
-.. code:: bash
-
-    # ------------------------------------------------------------------------------
-    # slurm settings
-    # ------------------------------------------------------------------------------
-    #SBATCH --nodes=1
-    #SBATCH --ntasks=1
-    #SBATCH --cpus-per-task=1
-    #SBATCH- -mem=4G
-    #SBATCH --partition=KRLab
-    #SBATCH --output=jid-%A-%a_jname-%x.log
-    #SBATCH --mail-type=FAIL
+`Slurm Script Template: <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ParallelTemplates.html#slurm-script-template>`_
 
 Command Example:
 
@@ -130,11 +117,4 @@ Command Example:
 
     qsub /path/to/script/Step1_motion.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
 
-Script Template:
-
-.. toctree::
-   :maxdepth: 3
-
-   server/docs/ParallelTemplates
-
-
+`SGE Script Template: <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ParallelTemplates.html#sun-grid-engine-uber-script-template>`_
