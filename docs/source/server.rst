@@ -78,7 +78,7 @@ Parallel Jobs
 
 To run parallel jobs, we can use `SLURM (preferred) <https://slurm.schedmd.com/quickstart.html>`_ or `Sun Grid Engine (old) <http://star.mit.edu/cluster/docs/0.93.3/guides/sge.html>`_
 
-To use ``Slurm``, first access the server via ``cvlkrcompute2.utdallas.edu`` (or ``totoro.utdallas.edu``) or via ``cortex``.
+To use ``slurm``, first access the server via ``cvlkrcompute2.utdallas.edu`` (or ``totoro.utdallas.edu``) or via ``cortex``.
 
 Basic Slurm commands:
 
@@ -114,7 +114,7 @@ Command Example:
 
     sbatch /path/to/script.sh
 
-To use ``Sun Grid Engine``, run the following on either servers:
+To use ``Sun Grid Engine``, run the following on ``cvlkrcompute1.utdallas.edu`` (or ``ponyo.utdallas.edu``):
 
 .. code:: bash
 
@@ -143,10 +143,11 @@ Common SGE settings:
     #$ -m a \
     #$ -M ${USER}@utdallas.edu
 
+`SGE Script Template <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ParallelTemplates.html#sun-grid-engine-uber-script-template>`_
+
 Command Example:
 
 .. code:: bash
 
     qsub /path/to/script/Step1_motion.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
 
-`SGE Script Template <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ParallelTemplates.html#sun-grid-engine-uber-script-template>`_
