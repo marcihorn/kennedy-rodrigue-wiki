@@ -78,7 +78,7 @@ Parallel Jobs
 
 To run parallel jobs, we can use `Slurm (preferred) <https://slurm.schedmd.com/quickstart.html>`_ or `Sun Grid Engine (old) <http://star.mit.edu/cluster/docs/0.93.3/guides/sge.html>`_
 
-To use ``Slurm``, first access the server via ``cvlkrcompute2.utdallas.edu`` or ``totoro.utdallas.edu``.
+To use ``Slurm``, first access the server via ``cvlkrcompute2.utdallas.edu`` or ``totoro.utdallas.edu`` or via ``cortex``.
 
 Basic Slurm commands:
 
