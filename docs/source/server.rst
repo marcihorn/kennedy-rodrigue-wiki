@@ -82,8 +82,6 @@ To use ``Slurm``, first access the server via ``cvlkrcompute2.utdallas.edu`` or 
 
 Basic Slurm commands:
 
-Basic Slurm commands:
-
 .. code:: bash
     
     sbatch # Submit a job
@@ -130,7 +128,7 @@ Command Example:
 
 .. code:: bash
 
-    qsub path/to/script/Step1_motion.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
+    qsub /path/to/script/Step1_motion.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
 
 Script Template:
 
