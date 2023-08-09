@@ -76,25 +76,43 @@ To unload software, run:
 Parallel Jobs
 --------
 
-To run parallel jobs, we can use `Slurm (preferred) <https://slurm.schedmd.com/quickstart.html>`_ or `Sun Grid Engine (old) <http://star.mit.edu/cluster/docs/0.93.3/guides/sge.html>`_
+To run parallel jobs, we can use `SLURM (preferred) <https://slurm.schedmd.com/quickstart.html>`_ or `Sun Grid Engine (old) <http://star.mit.edu/cluster/docs/0.93.3/guides/sge.html>`_
 
-To use ``Slurm``, first access the server via ``cvlkrcompute2.utdallas.edu`` or ``totoro.utdallas.edu`` or via ``cortex``.
+To use ``Slurm``, first access the server via ``cvlkrcompute2.utdallas.edu`` (or ``totoro.utdallas.edu``) or via ``cortex``.
 
 Basic Slurm commands:
 
 .. code:: bash
     
-    sbatch # Submit a job
-    squeue # Show see pending jobs
-    scancel <jobid> or scancel -u <username> # Cancel a job
+    sbatch                   # Submit a job
+    squeue                   # Show see pending jobs
+    scancel <jobid>          # cancel specific job
+    scancel -u <username>    # Cancel all jobs
 
-`Slurm Script Template: <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ParallelTemplates.html#slurm-script-template>`_
+Common SLURM settings:
+
+.. code:: bash
+
+    # ------------------------------------------------------------------------------
+    # slurm settings
+    # ------------------------------------------------------------------------------
+    #SBATCH --nodes=1
+    #SBATCH --ntasks=1
+    #SBATCH --cpus-per-task=1        # can be increased if needed
+    #SBATCH- -mem=4G                 # can be increased if needed
+    #SBATCH --partition=KRLab
+    #SBATCH --output=jid-%A-%a_jname-%x.log
+    #SBATCH --mail-type=FAIL
+    #SBATCH --time=2-00:00:00        # day-hours:minutes:seconds format
+    #SBATCH --export=NONE            # ALL or comma-separated environment variables
+
+`SLURM Script Template <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ParallelTemplates.html#slurm-script-template>`_
 
 Command Example:
 
 .. code:: bash
 
-    sbatch /path/to/script/script.sh
+    sbatch /path/to/script.sh
 
 To use ``Sun Grid Engine``, run the following on either servers:
 
@@ -106,10 +124,24 @@ Basic SGE commands:
 
 .. code:: bash
 
-    qsub # Submit a job
-    qstat # Show statuses of jobs
-    qdel # Cancel a job
-    qhold # Place a hold on queued job to prevent it from running
+    qsub    # Submit a job
+    qstat   # Show statuses of jobs
+    qdel    # Cancel a job
+    qhold   # Place a hold on queued job to prevent it from running
+
+Common SGE settings:
+
+.. code:: bash
+
+    # ------------------------------------------------------------------------------
+    # sge settings
+    # ------------------------------------------------------------------------------
+    #$ -V
+    #$ -S /bin/bash
+    #$ -o jid-$JOB_ID-$TASK_ID_jname-$JOB_NAME.log
+    #$ -j y
+    #$ -m a \
+    #$ -M ${USER}@utdallas.edu
 
 Command Example:
 
@@ -117,4 +149,4 @@ Command Example:
 
     qsub /path/to/script/Step1_motion.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
 
-`SGE Script Template: <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ParallelTemplates.html#sun-grid-engine-uber-script-template>`_
+`SGE Script Template <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ParallelTemplates.html#sun-grid-engine-uber-script-template>`_
