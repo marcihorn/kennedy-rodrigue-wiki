@@ -5,6 +5,11 @@ Script Templates
 .. note::
    This documentation is under active development. Last updated: 08/09/2023
 
+.. contents:: Table of Contents
+   :depth: 2
+   :local:
+   :backlinks: none
+
 .. _parallel_script:
 
 Parallel Script Template
@@ -92,8 +97,8 @@ Parallel Script Template
     ensure_permissions ${out_paths[nii_dir]}
     print_footer
 
-Command Example:
------------------
+Command Example
++++++++++
 
 To run this script:
 
