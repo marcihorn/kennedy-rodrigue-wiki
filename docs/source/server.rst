@@ -78,7 +78,7 @@ Parallel Jobs
 
 To run parallel jobs, we can use `SLURM (preferred) <https://slurm.schedmd.com/quickstart.html>`_ or `Sun Grid Engine (old) <http://star.mit.edu/cluster/docs/0.93.3/guides/sge.html>`_.
 
-`Parallel Script Template <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ScriptTemplates.html#parallel-script-template>`_
+`Parallel Script Template <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/scripts/ScriptTemplates.html#parallel-script-template>`_
 
 SLURM
 +++++++
