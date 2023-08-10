@@ -45,7 +45,6 @@ Parallel Script Template
     # ------------------------------------------------------------------------------
     # modules
     # ------------------------------------------------------------------------------
-    #module load sge                 # use module if using SGE
     module load bashHelperKennedyRodrigue
     source bashHelperKennedyRodrigueFunctions.sh
 
@@ -104,5 +103,6 @@ To run this script:
     sbatch /path/to/script/script.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
 
     # SGE
+    module load sge
     qsub /path/to/script/script.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
 
