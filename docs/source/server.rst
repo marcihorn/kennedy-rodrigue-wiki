@@ -84,7 +84,7 @@ Basic Slurm commands:
 
 .. code:: bash
     
-    sbatch                   # Submit a job
+    sbatch <script>          # Submit a job
     squeue                   # Show see pending jobs
     scancel <jobid>          # cancel specific job
     scancel -u <username>    # Cancel all jobs
@@ -124,10 +124,10 @@ Basic SGE commands:
 
 .. code:: bash
 
-    qsub    # Submit a job
-    qstat   # Show statuses of jobs
-    qdel    # Cancel a job
-    qhold   # Place a hold on queued job to prevent it from running
+    qsub <script>    # Submit a job
+    qstat            # Show statuses of jobs
+    qdel <jobid>     # Cancel a job
+    qhold <jobid>    # Place a hold on queued job to prevent it from running
 
 Common SGE settings:
 
@@ -149,5 +149,5 @@ Command Example:
 
 .. code:: bash
 
-    qsub /path/to/script/Step1_motion.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
+    qsub /path/to/script.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
 
