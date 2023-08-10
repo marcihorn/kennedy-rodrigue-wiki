@@ -9,5 +9,6 @@ Welcome to Kennedy-Rodrigue Lab documentation!
    :maxdepth: 3
 
    server
-   scripts/ScriptTemplates.rst
    study-jlbs/index
+   study-pams/index
+   scripts/ScriptTemplates.rst
