@@ -76,12 +76,13 @@ To unload software, run:
 Parallel Jobs
 --------
 
-To run parallel jobs, we can use `SLURM (preferred) <https://slurm.schedmd.com/quickstart.html>`_ or `Sun Grid Engine (old) <http://star.mit.edu/cluster/docs/0.93.3/guides/sge.html>`_
-
-To use ``SLURM``, first access the server via ``cvlkrcompute2.utdallas.edu`` (or ``totoro.utdallas.edu``) or via ``cortex.cvl.utdallas.edu``.
+To run parallel jobs, we can use `SLURM (preferred) <https://slurm.schedmd.com/quickstart.html>`_ or `Sun Grid Engine (old) <http://star.mit.edu/cluster/docs/0.93.3/guides/sge.html>`_.
+`Parallel Script Template <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ScriptTemplates.html#parallel-script-template>`_
 
 SLURM
 +++++++
+
+To use ``SLURM``, first access the server via ``cvlkrcompute2.utdallas.edu`` (or ``totoro.utdallas.edu``) or via ``cortex.cvl.utdallas.edu``.
 
 Basic SLURM commands:
 
@@ -118,7 +119,6 @@ Command Example:
 Sun Grid Engine
 +++++++
 
-
 To use ``Sun Grid Engine``, run the following on ``cvlkrcompute1.utdallas.edu`` (or ``ponyo.utdallas.edu``):
 
 .. code:: bash
@@ -154,4 +154,4 @@ Command Example:
 
     qsub /path/to/script.sh --airc_id 3tb1111 --sub 0001 --date 20230101 --ses 3
 
-`Parallel Script Template <https://kennedy-rodrigue-wiki.readthedocs.io/en/latest/server/docs/ScriptTemplates.html#parallel-script-template>`_
+
