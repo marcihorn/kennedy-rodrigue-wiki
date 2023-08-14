@@ -41,7 +41,7 @@ Data Entry
 Convert
 --------
 
-#. After receiving the Data Transfer email from BHIC, run the following script to unzip data:
+#. After receiving the BHIC Data Transfer email, run the following script to unzip data:
 
    .. code:: bash
 
@@ -60,9 +60,9 @@ QC Parameters
 
 #. QC the data and check for any images that have bad quality or were cut off.
       
-   * Create a scanner_reconstruction directory for the reconstructed files (acq. 11,13,15,18,19 for ref.).
+   * Create a ``scanner_reconstruction`` directory for the reconstructed files (acq. 11,13,15,18,19 for ref.).
 
-   * Create a bad directory within the subject directory for bad scans if necessary.
+   * Create a ``bad`` directory within the subject directory for bad scans if necessary.
 
 #. After QC, run the QC uber script:
    
